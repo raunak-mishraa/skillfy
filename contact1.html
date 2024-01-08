@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/4b73b92351.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+     
+
+      .width {
+        margin: 2rem auto 0 auto;
+        /* box-shadow: 0 0 4px 2px rgb(255, 255, 255); */
+      }
+      h2 {
+        text-align: center;
+        padding: 20px;
+        font-family: tahoma;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .shadow{
+        box-shadow: 0px 0px 20px rgb(88, 88, 88);
+      }
+      input[type="text"],
+      select,
+      textarea,
+      input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        /* border: 1px solid #ccc; */
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        border: none;
+      }
+
+      input[type="submit"] {
+        background-color: #04aa6d;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #submit {
+        width: 25%;
+        padding: 12px 2px;
+        font-weight: 700;
+        border: none;
+        background-color: rgb(230, 75, 3);
+        color: #fff;
+        cursor: pointer;
+        border: 1px solid rgb(245, 12, 12);
+      }
+      #submit:hover {
+        background-color: rgb(0, 0, 0);
+      }
+
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      input.name {
+        border: 1px solid rgb(0, 0, 0);
+      }
+      .back {
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        margin-left: 1rem;
+        width: 25%;
+        padding: 10px 2px;
+        font-weight: 600;
+        /* border-radius: 9px; */
+        border: 2px solid black;
+      }
+      .back:hover {
+        color: white;
+        background-color: rgb(0, 0, 0);
+      }
+      @media (min-width: 740px) {
+        .width {
+          width: 50%;
+        }
+        /* .back,#submit{
+          width: 25%;
+        } */
+      }
+      @media (max-width: 400px) {
+        .width {
+          width: 100%;
+        }
+      }
+      /* @media(max-width:700px) {
+          .back,#submit{
+          width: 25%;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container width shadow">
+      <form onsubmit="sendEmail();reset();return false;">
+        <h2>Need Help?</h2>
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          class="name"
+          name="firstname"
+          placeholder="Your first name.."
+          required
+        />
+
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          class="name"
+          name="lastname"
+          placeholder="Your last name.."
+          required
+        />
+        <label>Email:</label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="name"
+          placeholder="Enter your email"
+          required
+        />
+        <br /><br />
+        <label for="subject">Massage..</label>
+        <textarea
+          id="message"
+          name="subject"
+          placeholder="How can we help you?"
+          rows="4" required
+        ></textarea>
+
+        <!-- <input type="submit" id="submit" class="name" value="Send" /> -->
+        <button type="submit" id="submit" class="name">Send</button>
+        <a href="index.html" class="back">Back</a>
+      </form>
+    </div>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+
+  </body>
+</html>

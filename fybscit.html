@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/4b73b92351.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      li > ul {
+        transform: translatex(100%) scale(0);
+      }
+      li:hover > ul {
+        transform: translatex(101%) scale(1);
+      }
+      li > button svg {
+        transform: rotate(-90deg);
+      }
+      li:hover > button svg {
+        transform: rotate(-270deg);
+      }
+
+      .group:hover .group-hover\:scale-100 {
+        transform: scale(1);
+      }
+      .group:hover .group-hover\:-rotate-180 {
+        transform: rotate(180deg);
+      }
+      .scale-0 {
+        transform: scale(0);
+      }
+      .min-w-32 {
+        min-width: 8rem;
+      }
+    </style>
+    <title>fybscit</title>
+  </head>
+  <body>
+    
+    <nav class="bg-white shadow-md sticky top-0 border-gray-200 px-2 sm:px-4 py-2.5 rounded">
+      <div class="container flex flex-wrap items-center mx-auto">
+        <a href="https://flowbite.com/" class="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-10 h-10 p-2 bg-amber-400 rounded-full"
+            viewBox="0 0 440 512"
+          >
+            <path
+              d="M382.7 292.5l2.7 2.7-170-167.3c-3.5-3.5-9.7-3.7-13.8-.5L144.3 171c-4.2 3.2-4.6 8.7-1.1 12.2l68.1 64.3c3.6 3.5 9.9 3.7 14 .5l.1-.1c4.1-3.2 10.4-3 14 .5l84 81.3c3.6 3.5 3.2 9-.9 12.2l-93.2 74c-4.2 3.3-10.5 3.1-14.2-.4L63.2 268c-3.5-3.5-9.7-3.7-13.9-.5L3.5 302.4c-4.2 3.2-4.7 8.7-1.2 12.2L211 510.7s7.4 6.8 17.3-.8l198-163.9c4-3.2 4.4-8.7.7-12.2zm54.5-83.4L226.7 2.5c-1.5-1.2-8-5.5-16.3 1.1L3.6 165.7c-4.2 3.2-4.8 8.7-1.2 12.2l42.3 41.7 171.7 165.1c3.7 3.5 10.1 3.7 14.3.4l50.2-38.8-.3-.3 7.7-6c4.2-3.2 4.6-8.7.9-12.2l-57.1-54.4c-3.6-3.5-10-3.7-14.2-.5l-.1.1c-4.2 3.2-10.5 3.1-14.2-.4L109 180.8c-3.6-3.5-3.1-8.9 1.1-12.2l92.2-71.5c4.1-3.2 10.3-3 13.9.5l160.4 159c3.7 3.5 10 3.7 14.1.5l45.8-35.8c4.1-3.2 4.4-8.7.7-12.2z"
+            />
+          </svg>
+          <span
+            class="self-center ml-2 text-xl font-semibold whitespace-nowrap"
+            >Skill-Fy</span
+          >
+        </a>
+        <div class="flex md:order-2 ml-auto">
+          <button
+            type="button"
+            data-collapse-toggle="navbar-search"
+            aria-controls="navbar-search"
+            aria-expanded="false"
+            class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 mr-1"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden relative md:block">
+            <div
+              class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm"
+              placeholder="Search..."
+            />
+          </div>
+          <button
+            data-collapse-toggle="navbar-search"
+            type="button"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-search"
+            aria-expanded="false"
+          >
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+          id="navbar-search"
+        >
+          <div class="relative mt-3 md:hidden">
+            <div
+              class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-500"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+
+            <input
+              type="text"
+              id="searchbar"
+              name="search"
+              onkeyup="search()"
+              class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm"
+              placeholder="Search..."
+            />
+            <!-- right now its not in working condition -->
+          </div>
+
+          <ul
+            class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 pr-4 pl-3 lg:ml-10 bg-amber-300 rounded md:bg-transparent font-semibold md:text-black md:p-0"
+                >Home</a
+              >
+            </li>
+
+            <li>
+              <div class="group inline-block">
+                <button class="flex items-center">
+                  <span
+                    class="py-2 md:py-0 md:pr-4 pl-3 font-semibold flex-1 hover:text-amber-500"
+                    >Academics<span
+                      class="bg-amber-400 text-black ml-1 p-1 py-0 rounded-md"
+                      >New</span
+                    ></span
+                  >
+                  <span>
+                    <svg
+                      class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
+                >
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full text-left flex items-center outline-none focus:outline-none"
+                    >
+                      <span class="pr-1 flex-1">FYBSCIT</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="fybscit.html">SEM I</a>
+                      </li>
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="fybscit.html">SEM II</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full text-left flex items-center outline-none focus:outline-none"
+                    >
+                      <span class="pr-1 flex-1"
+                        >SYBSCIT<span
+                          class="bg-amber-400 text-black ml-1 p-1 py-0 rounded-md"
+                          >New</span
+                        ></span
+                      >
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="sybscit.html">SEM III</a
+                        ><span
+                          class="bg-amber-400 text-black ml-1 p-1 py-0 rounded-md"
+                          >New</span
+                        >
+                      </li>
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="sybscit.html">SEM IV</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                    <button
+                      class="w-full text-left flex items-center outline-none focus:outline-none"
+                    >
+                      <span class="pr-1 flex-1">TYBSCIT</span>
+                      <span class="mr-auto">
+                        <svg
+                          class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                    <ul
+                      class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
+                    >
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="tybscit.html">SEM V</a>
+                      </li>
+                      <li class="px-3 py-1 hover:bg-gray-100 cursor-pointer">
+                        <a href="tybscit.html">SEM VI</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                class="block py-2 pr-4 pl-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-amber-500 md:p-0"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block py-2 pr-4 pl-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-amber-500 md:p-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block py-2 pr-4 pl-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-amber-500 md:p-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="px-12 py-12">
+      <h1 class="font-bold text-4xl">FYBSCIT</h1>
+      <hr class="bg-amber-400 h-2 w-28 md:h-2 md:w-40 rounded-xl mt-2" />
+
+
+      <div class="sem1 mt-10">
+        <h2 class="font-bold text-center text-3xl">SEM I</h2>
+        <p class="text-center font-semibold text-lg mt-4">
+          Here you'll get the<span class="bg-amber-300">
+            e-notes and video tutorials</span
+          >
+          of every subject of Sem-I
+        </p>
+      </div>
+      <div class="mb-4 mt-11 flex justify-center">
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="myTab"
+          data-tabs-toggle="#myTabContent"
+          role="tablist"
+        >
+          <li class="mr-2">
+            <button
+              class="inline-block p-4 rounded-t-lg border-b-2 text-black font-semibold text-lg hover:border-amber-600"
+              id="notes-tab"
+              data-tabs-target="#notes"
+              type="button"
+              role="tab"
+              aria-controls="notes"
+              aria-selected="true"
+            >
+              PDF/PPT
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              class="inline-block p-4 rounded-t-lg  text-black font-semibold text-lg border-b-2 border-transparent hover:border-amber-600"
+              id="video-tab"
+              data-tabs-target="#video"
+              type="button"
+              role="tab"
+              aria-controls="video"
+              aria-selected="false"
+            >
+              VIDEO TUTORIALS
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div id="myTabContent">
+        <div
+          class="p-4rounded-lg "
+          id="notes"
+          role="tabpanel"
+          aria-labelledby="notes-tab"
+        >
+          <h1 class="text-3xl md:text-5xl font-bold my-24 text-center">Coming Soon!</h1>
+        </div>
+
+        <div
+          class="hidden p-4 rounded-lg"
+          id="video"
+          role="tabpanel"
+          aria-labelledby="video-tab"
+        >
+        <h1 class="text-3xl md:text-5xl font-bold my-24 text-center">Coming Soon!</h1>
+        </div>
+      </div>
+
+
+ <!-- ......................................................................... -->
+
+
+      <div class="sem1 mt-10">
+        <h2 class="font-bold text-center text-3xl">SEM I</h2>
+        <p class="text-center font-semibold text-lg mt-4">
+          Here you'll get the<span class="bg-amber-300">
+            e-notes and video tutorials</span
+          >
+          of every subject of Sem-II
+        </p>
+      </div>
+  
+      <div class="mb-4 mt-11 flex justify-center">
+        <ul
+          class="flex flex-wrap -mb-px text-sm font-medium text-center"
+          id="myTab"
+          data-tabs-toggle="#myTabContent"
+          role="tablist"
+        >
+          <li class="mr-2">
+            <button
+              class="inline-block p-4 rounded-t-lg border-b-2 text-black font-semibold text-lg hover:border-amber-600"
+              id="notes1-tab"
+              data-tabs-target="#notes1"
+              type="button"
+              role="tab"
+              aria-controls="notes1"
+              aria-selected="true"
+            >
+              PDF/PPT
+            </button>
+          </li>
+          <li class="mr-2">
+            <button
+              class="inline-block p-4 rounded-t-lg  text-black font-semibold text-lg border-b-2 border-transparent hover:border-amber-600"
+              id="video1-tab"
+              data-tabs-target="#video1"
+              type="button"
+              role="tab"
+              aria-controls="video1"
+              aria-selected="false"
+            >
+              VIDEO TUTORIALS
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <div id="myTabContent">
+        <div
+          class="p-4rounded-lg "
+          id="notes1"
+          role="tabpanel"
+          aria-labelledby="notes1-tab"
+        >
+          <h1 class="text-3xl md:text-5xl font-bold my-24 text-center">Coming Soon!</h1>
+        </div>
+  
+        <div
+          class="hidden p-4 rounded-lg"
+          id="video1"
+          role="tabpanel"
+          aria-labelledby="video1-tab"
+        >
+              <h1 class="text-3xl md:text-5xl font-bold my-24 text-center">Coming Soon!</h1>
+        </div>
+      </div>
+    </section>
+    <div
+    class="container text-center py-6 lg:py-16 mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between"
+  >
+    <div
+      class="grid text-black shadow-lg transition duration-300 hover:text-white hover:bg-black rounded-xl"
+    >
+  <div class="previous py-2 px-9 rounded-lg bg-amber-400">
+    <a href="index.html">Back</a>
+  </div>
+  </div>
+  <div
+  class="grid text-black shadow-lg transition duration-300 hover:text-white hover:bg-black rounded-xl"
+>
+  <div class="next py-2 px-9 rounded-lg bg-amber-400">
+    <a href="sybscit.html">Next</a>
+  </div>
+  </div>
+</div>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  </body>
+</html>
